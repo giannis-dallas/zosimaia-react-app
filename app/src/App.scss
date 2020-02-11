@@ -1,0 +1,257 @@
+$base-color: #daa520;
+
+.app {
+    width: 90%;
+    max-width: 770px;
+    margin: 0 auto;
+    font-size: 16px;
+
+    & *{
+      box-sizing: border-box;
+    }
+}
+
+.filters{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  justify-content: center;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  &> div{
+    flex: 1;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #444;
+    opacity: 1; /* Firefox */
+  }  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#444;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:#444;
+  }
+
+
+  input,
+  select{
+    width: 100%;
+    border:1px solid #eaeaea;
+    color:#444 !important;
+
+    &:focus{
+      outline: none !important;
+      color: #444 !important;
+      background: transparent !important;
+      box-shadow: 0 0 10px transparentize($base-color, .5);
+      border:1px solid transparentize($base-color, 0);
+    }
+
+
+  }
+
+  option:disabled {
+    color:#444 !important;
+  }
+}
+
+.name-pagination {
+  flex: 0 0 100% !important;
+  max-width: 600px;
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  hr{
+    margin: 10px 0;
+    height: 0;
+    width: 100%;
+  }
+
+  span:first-child{
+    min-width: 100px;
+  }
+
+  span {
+    cursor: pointer;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    max-width: 50px;
+    width: calc(100%/12);
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    &.active {
+      background-color:$base-color;
+      color: white;
+      border: 1px solid $base-color;
+    }
+
+    @media screen and (max-width:599px) {
+      width: calc(100%/8);
+    }
+
+  }
+}
+
+  .year-pagination,
+  .job-select,
+  .location-select{
+    flex: 0 0 195px !important;
+    label{
+      display: inline-block;
+    }
+    select{
+      width: 100%;
+      line-height: 1;
+      box-sizing: border-box;
+      min-height: 39px;
+
+    }
+  }
+
+  .name-search{
+    min-width: 195px;
+    max-width: 220px;
+  }
+
+  .name-search input,
+  .location-select select,
+  .job-select select,
+  .year-pagination select{
+    padding: 8px 16px;
+  }
+
+.graduates-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+  justify-content: center;
+
+  > *{
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    max-width: 600px;
+  }
+}
+
+.allumni-wrapper{
+  position: relative;
+  margin: 10px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+
+
+  .allumni-actions{
+    align-self: center;
+    padding: 10px;
+    flex: 0 0 100%;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all .3s ease-in;
+    background: #fafafa;
+    color: $base-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-top:1px solid #eaeaea;    
+
+    .height-toggle,
+    .actions-toggle{
+      cursor: pointer;
+    }
+
+    .height-toggle{
+      display: flex;
+      align-items: center;
+      >.mdi-icon{padding-right: 10px; font-size: 16px;}
+
+    }
+    .actions-toggle{
+      margin-left: auto;
+      size:30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0,5s cubic-bezier();
+
+      &.rotated{
+        transform: rotate(180deg);
+      }
+      
+      .mdi-icon {
+        width: 40px;
+        height: 40px;
+        color:#212121;
+        padding: 12px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: all 0,3s cubic-bezier();
+
+        &:hover{
+          background-color: rgba(0, 0, 0, 0.08);
+        }
+      }
+      
+    }
+  }
+
+  .allumni-main-info{
+
+    padding: 10px;
+    .allumni-surname{
+      font-weight: 700;  
+    }
+    .allumni-name{
+      font-size: 13px;
+      text-transform: capitalize;  
+    }
+
+  }
+
+
+  .allumni-extra{
+    margin-left: auto;
+    padding: 10px;
+    text-align: right;
+
+    .allumni-year{
+      font-weight:700;
+      font-style: italic;
+    }
+    .allumni-job,
+    .allumni-home-city{
+      font-size: 12px;
+      // font-style: italic;
+    }
+  }
+
+  .allumni-details{
+    flex: 0 0 100%;
+    font-size: 14px;
+    padding: 10px;
+
+    .attribute-name{
+      font-size:12px;
+      font-weight: 700;
+    }
+  }
+}
+
+
+
