@@ -39,7 +39,7 @@ class App extends React.Component {
       }
 
     componentDidMount(){
-      fetch("https://zosimaia-server.herokuapp.com/newdata",{
+      fetch("https://zosimaia-app.onrender.com/newdata",{
           method: 'GET',
       })
       .then(res => res.json())
